@@ -16,5 +16,5 @@
     $sum += $num * $row['price'];
     $rows[] = $row;
   }
-  require 't_cart.php';
+  require '../smarty/templates/cart.tpl';
 ?>

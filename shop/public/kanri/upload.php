@@ -12,5 +12,5 @@
   } else {
     $code = $_GET['code'];
   }
-  require 't_upload.php';
+  require '../../smarty/templates/kanri/upload.tpl';
 ?>

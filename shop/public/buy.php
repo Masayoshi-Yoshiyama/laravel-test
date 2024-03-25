@@ -30,9 +30,9 @@
           mb_send_mail($to, "購入メール", $body, "From: $from");
       */
       $_SESSION['cart'] = null;
-      require 't_buy_complete.php';
+      require '../smarty/templates/buy_complete.tpl';
       exit();
     }
   }
-  require 't_buy.php';
+  require '../smarty/templates/buy.tpl';
 ?>
