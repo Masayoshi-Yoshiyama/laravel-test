@@ -1,4 +1,9 @@
 ﻿<?php
+  require_once('D:\xampp\php\includes\Smarty\libs\Smarty.class.php');
+  $smarty = new Smarty();
+  $smarty->template_dir = '../smarty/templates/';
+  $smarty->compile_dir  = '../smarty/templates_c/';
+  
   require 'common.php';
   $error = '';
   $pdo = connect();
@@ -23,6 +28,13 @@
     $name = $row['name'];
     $comment = $row['comment'];
     $price = $row['price'];
+    $smarty->assign("row", $row);
   }
-  require '../../smarty/templates/kanri/edit.tpl';
+  $smarty->assign("code", $code);
+  $smarty->assign("name", $name);
+  $smarty->assign("comment", $comment);
+  $smarty->assign("price", $price);
+  $smarty->assign("error", $error);
+  $smarty->display('../../smarty/templates/kanri/edit.tpl');
+
 ?>

@@ -1,4 +1,9 @@
 ﻿<?php
+  require_once('D:\xampp\php\includes\Smarty\libs\Smarty.class.php');
+  $smarty = new Smarty();
+  $smarty->template_dir = '../smarty/templates/';
+  $smarty->compile_dir  = '../smarty/templates_c/';
+  
   require 'common.php';
   $rows = array();
   $sum = 0;
@@ -16,5 +21,8 @@
     $sum += $num * $row['price'];
     $rows[] = $row;
   }
-  require '../smarty/templates/cart.tpl';
+  $smarty->assign("rows", $rows);
+  $smarty->assign("sum", $sum);
+  $smarty->display('../smarty/templates/cart.tpl');
+
 ?>

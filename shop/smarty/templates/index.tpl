@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿{* Smarty *}
+
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -8,31 +10,35 @@
 <body>
   <h1>TEST Shop</h1>
   <table>
-    <?php foreach ($goods as $g) { ?>
+    {foreach from=$gary item=value}
       <tr>
         <td>
-          <?php echo img_tag($g['code']) ?>
+          <img src="images/{$value.img}.jpg" art="">
         </td>
         <td>
-          <p class="goods"><?php echo $g['name'] ?></p>
-          <p><?php echo nl2br($g['comment']) ?></p>
+          <p class="goods">{$value.name}</p>
+          <p>{$value.comment}</p>
         </td>
         <td width="80">
-          <p><?php echo $g['price'] ?> 円</p>
+          <p>{$value.price} 円</p>
           <form action="cart.php" method="post">
             <select name="num">
-              <?php
-                for ($i = 0; $i <= 9; $i++) {
-                  echo "<option>$i</option>";
-                }
-              ?>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
             </select>
-            <input type="hidden" name="code" value="<?php echo $g['code'] ?>">
+            <input type="hidden" name="code" value="{$value.code}">
             <input type="submit" name="submit" value="カートへ">
           </form>
         </td>
       </tr>
-    <?php } ?>
+    {/foreach}
     </table>
   </body>
 </html>

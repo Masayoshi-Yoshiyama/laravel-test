@@ -1,4 +1,9 @@
 ﻿<?php
+  require_once('D:\xampp\php\includes\Smarty\libs\Smarty.class.php');
+  $smarty = new Smarty();
+  $smarty->template_dir = '../smarty/templates/';
+  $smarty->compile_dir  = '../smarty/templates_c/';
+  
   require 'common.php';
   $error = $name = $address = $tel = '';
   if (@$_POST['submit']) {
@@ -30,9 +35,17 @@
           mb_send_mail($to, "購入メール", $body, "From: $from");
       */
       $_SESSION['cart'] = null;
-      require '../smarty/templates/buy_complete.tpl';
+      $smarty->display('../smarty/templates/buy_complete.tpl');
       exit();
     }
   }
-  require '../smarty/templates/buy.tpl';
+  $smarty->assign("name", $name);
+  $smarty->assign("address", $address);
+  $smarty->assign("tel", $tel);
+  $smarty->assign("error", $error);
+  $smarty->display('../smarty/templates/buy.tpl');
+
+
+
+
 ?>

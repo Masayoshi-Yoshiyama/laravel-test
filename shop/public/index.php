@@ -1,7 +1,13 @@
 ﻿<?php
+  require_once('D:\xampp\php\includes\Smarty\libs\Smarty.class.php');
+  $smarty = new Smarty();
+  $smarty->template_dir = '../smarty/templates/';
+  $smarty->compile_dir  = '../smarty/templates_c/';
+  
   require 'common.php';
   $pdo = connect();
   $st = $pdo->query("SELECT * FROM goods");
   $goods = $st->fetchAll();
-  require '../smarty/templates/index.tpl';
+  $smarty->assign("gary", $goods);
+  $smarty->display('../smarty/templates/index.tpl');
 ?>

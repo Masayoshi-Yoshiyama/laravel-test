@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿{* Smarty *}
+
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -8,19 +10,21 @@
   <body>
     <h1>購入</h1>
     <div class="base">
-      <?php if ($error) echo "<span class=\"error\">$error</span>" ?>
+      {if $error}
+        <span class=\"error\">{$error}</span>
+      {/if}
       <form action="buy.php" method="post">
         <p>
           お名前<br>
-          <input type="text" name="name" value="<?php echo $name ?>">
+          <input type="text" name="name" value="{$name}">
         </p>
         <p>
           ご住所<br>
-          <input type="text" name="address" size="60" value="<?php echo $address ?>">
+          <input type="text" name="address" size="60" value="{$address}">
         </p>
         <p>
           電話番号<br>
-          <input type="text" name="tel" value="<?php echo $tel ?>">
+          <input type="text" name="tel" value="{$tel}">
         </p>
         <p>
           <input type="submit" name="submit" value="購入">

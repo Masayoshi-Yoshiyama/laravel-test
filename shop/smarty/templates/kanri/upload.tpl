@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿{* Smarty *}
+
+<!DOCTYPE html>
   <html>
     <head>
       <meta charset="utf-8">
@@ -7,14 +9,16 @@
     </head>
   <body>
     <div class="base">
-      <?php if ($error) echo "<span class=\"error\">$error</span>" ?>
+      {if $error}
+        <span class=\"error\">{$error}</span>
+      {/if}
       <form action="upload.php" method="post" enctype="multipart/form-data">
         <p>
           商品画像（JPEGのみ）<br>
           <input type="file" name="pic">
         </p>
         <p>
-          <input type="hidden" name="code" value="<?php echo $code ?>">
+          <input type="hidden" name="code" value="{$code}">
           <input type="submit" name="submit" value="追加">
         </p>
       </form>
