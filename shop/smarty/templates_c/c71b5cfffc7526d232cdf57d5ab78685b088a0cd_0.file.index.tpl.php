@@ -1,15 +1,15 @@
 <?php
-/* Smarty version 4.5.1, created on 2024-03-26 03:38:49
+/* Smarty version 4.5.1, created on 2024-03-26 03:58:06
   from 'D:\cyou-tec\sourcetree\laravel-test\shop\smarty\templates\kanri\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.1',
-  'unifunc' => 'content_66023539b1fea8_03598242',
+  'unifunc' => 'content_660239bec65591_91450609',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'faf6b2a15aef340daec8ba3992b6bcde7582ac40' => 
+    'c71b5cfffc7526d232cdf57d5ab78685b088a0cd' => 
     array (
       0 => 'D:\\cyou-tec\\sourcetree\\laravel-test\\shop\\smarty\\templates\\kanri\\index.tpl',
       1 => 1711420727,
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66023539b1fea8_03598242 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660239bec65591_91450609 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>

@@ -1,4 +1,9 @@
 ﻿<?php
+  require_once('D:\xampp\php\includes\Smarty\libs\Smarty.class.php');
+  $smarty = new Smarty();
+  $smarty->template_dir = '../smarty/templates/';
+  $smarty->compile_dir  = '../smarty/templates_c/';
+  
   session_start();
   const DB_HOST = 'mysql:dbname=shop';
   const DB_USER = 'testuser';

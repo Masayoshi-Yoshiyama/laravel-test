@@ -1,9 +1,4 @@
 ﻿<?php
-  require_once('D:\xampp\php\includes\Smarty\libs\Smarty.class.php');
-  $smarty = new Smarty();
-  $smarty->template_dir = '../smarty/templates/';
-  $smarty->compile_dir  = '../smarty/templates_c/';
-  
   require 'common.php';
   $error = $name = $comment = $price = '';
   $pdo = connect();
